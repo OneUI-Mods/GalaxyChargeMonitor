@@ -147,6 +147,8 @@ class MainActivity : AppCompatActivity() {
         scroll.addView(body)
         layout.addView(scroll, LinearLayout.LayoutParams(-1, 0, 1f))
         val nav = BottomNavigationView(this)
+        nav.labelVisibilityMode =
+            com.google.android.material.navigation.NavigationBarView.LABEL_VISIBILITY_LABELED
         val labels =
             intArrayOf(
                 R.string.overview,
@@ -171,6 +173,14 @@ class MainActivity : AppCompatActivity() {
         }
         layout.addView(nav)
         setContentView(layout)
+        val dark =
+            resources.configuration.uiMode and
+                android.content.res.Configuration.UI_MODE_NIGHT_MASK ==
+                android.content.res.Configuration.UI_MODE_NIGHT_YES
+        WindowCompat.getInsetsController(window, layout).apply {
+            isAppearanceLightStatusBars = !dark
+            isAppearanceLightNavigationBars = !dark
+        }
         render(false)
     }
 
@@ -805,7 +815,19 @@ class MainActivity : AppCompatActivity() {
         val c =
             MaterialCardView(this).apply {
                 radius = dp(22).toFloat()
-                strokeWidth = 0
+                strokeWidth = dp(1)
+                setStrokeColor(
+                    MaterialColors.getColor(
+                        this,
+                        com.google.android.material.R.attr.colorOutlineVariant,
+                    )
+                )
+                setCardBackgroundColor(
+                    MaterialColors.getColor(
+                        this,
+                        com.google.android.material.R.attr.colorSurfaceContainer,
+                    )
+                )
             }
         val box =
             LinearLayout(this).apply {
@@ -831,7 +853,19 @@ class MainActivity : AppCompatActivity() {
                 val c =
                     MaterialCardView(this).apply {
                         radius = dp(20).toFloat()
-                        strokeWidth = 0
+                        strokeWidth = dp(1)
+                        setStrokeColor(
+                            MaterialColors.getColor(
+                                this,
+                                com.google.android.material.R.attr.colorOutlineVariant,
+                            )
+                        )
+                        setCardBackgroundColor(
+                            MaterialColors.getColor(
+                                this,
+                                com.google.android.material.R.attr.colorSurfaceContainer,
+                            )
+                        )
                     }
                 val box =
                     LinearLayout(this).apply {

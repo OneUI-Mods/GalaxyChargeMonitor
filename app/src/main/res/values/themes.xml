@@ -5,6 +5,5 @@
         <item name="colorOnPrimary">#FFFFFF</item>
         <item name="colorPrimaryContainer">#D9E2FF</item>
         <item name="colorOnPrimaryContainer">#001A42</item>
-        <item name="android:windowLightStatusBar">false</item>
     </style>
 </resources>
