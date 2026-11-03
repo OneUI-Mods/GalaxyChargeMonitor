@@ -3,6 +3,7 @@
 import argparse
 import io
 import json
+import re
 from pathlib import Path
 from zipfile import ZipFile
 import xml.etree.ElementTree as ET
@@ -24,7 +25,7 @@ def main():
             assert (ASSETS / e["asset"]).is_file()
         print(f"Legal catalog verified: {len(coordinates)} runtime components")
         return
-    entries = [dict(id="project", title="Galaxy Charge Monitor", version="0.1.0", license="MIT", asset="legal/PROJECT-MIT.txt")]
+    entries = [dict(id="project", title="Galaxy Charge Monitor", version=re.search(r"versionName '([^']+)'", (ROOT / "app/build.gradle").read_text())[1], license="MIT", asset="legal/PROJECT-MIT.txt")]
     notices = []
     seen = set()
 

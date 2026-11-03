@@ -1,23 +1,126 @@
 <resources>
     <string name="app_name">Galaxy Charge Monitor</string>
     <string name="readonly">読み取り専用</string>
-    <string name="overview">概要</string><string name="limits">制限</string><string name="settings">設定表</string><string name="history">履歴</string><string name="info">情報</string>
-    <string name="connect">Rootで接続</string><string name="pause">一時停止</string><string name="resume">監視を再開</string><string name="retry">Root接続を再試行</string>
-    <string name="root_connected">Root接続中</string><string name="basic_only">Androidの電池情報のみ</string><string name="paused">一時停止中・前回の測定値</string><string name="read_error">Rootで取得できませんでした。基本情報のみ表示し、保護された項目は取得不可にしています。</string>
-    <string name="battery_power">電池側の正味電力</string><string name="power_note">電池側の電圧×電流です。USB入力の実測電力ではありません。プラスは充電、マイナスは放電です。</string>
-    <string name="battery_level">電池残量</string><string name="voltage">電池電圧</string><string name="battery_current">電池電流</string><string name="battery_temp">電池温度</string><string name="lrp_temp">LRP温度</string><string name="charger_temp">充電IC温度</string><string name="usb_temp">USB温度</string><string name="direct_temp">直接充電IC温度</string><string name="wireless_temp">無線充電温度</string>
-    <string name="unavailable">取得不可</string><string name="last_sample">測定：%1$s</string><string name="charging_state">充電状態</string><string name="charging_method">認識された充電方式</string><string name="direct_state">直接充電の状態</string><string name="direct_step">直接充電の段階</string><string name="step_unused">未使用</string>
-    <string name="polling">取得間隔（充電中）</string><string name="poll_note">アプリ表示中だけ監視します。バックグラウンドでは停止し、非充電中は10秒以上の間隔に抑えます。WakeLockや常駐サービスは使いません。</string>
-    <string name="votes_title">有効な制御の投票</string><string name="votes_note">有効な投票だけを表示します。「採用」はドライバーが報告した選択結果です。電流・電圧の上限は設定値であり実測値ではありません。表示が空でも、すべてのハードウェア制限が解除されているとは限りません。</string><string name="selected">採用</string><string name="no_votes">有効な投票の報告なし</string>
-    <string name="reference_tables">温度設定の比較</string><string name="reference_note">実機から読み取った設定表です。現在の有効方式を検出したものではありません。LRPは電池温度とは別です。しきい値を超えただけでは制限中と断定しません。</string>
-    <string name="screen_off">画面OFF</string><string name="screen_on">画面ON</string><string name="lrp_line">%1$s：第1段階 %2$s／復帰 %3$s　第2段階 %4$s／復帰 %5$s　リセット %6$s</string>
-    <string name="current_limits">報告された電流上限</string><string name="input_limit">入力電流上限（ICL）</string><string name="battery_limit">電池電流上限（FCC）</string><string name="all_temperatures">温度・充電制御の現在値</string>
-    <string name="settings_search">名前・説明・値で検索</string><string name="settings_empty">Rootで接続すると、この端末の充電設定を読み取れます。別の端末で取得した値を代わりに表示することはありません。</string><string name="settings_count">%1$d項目・%2$s</string><string name="settings_note">この端末から取得した値です。設定の存在と、その分岐が有効なことは別です。空の存在フラグと数値の0を区別し、単位・条件が未確定のものは項目ごとに示します。</string>
-    <string name="present_flag">存在フラグ</string><string name="raw_bytes">元バイト列（ビッグエンディアン）</string><string name="live_values">今回の実機取得値</string><string name="cached_values">保存した実機取得値</string><string name="refresh_settings">設定表を再取得</string><string name="catalog_error">この端末の充電設定表を取得できません。</string>
-    <string name="history_note">このアプリのセッション中、最大360点をメモリに保持します。停止中の値は補間しません。残す場合は明示的に書き出してください。</string><string name="export">JSONを書き出す</string><string name="exported">書き出しました</string><string name="export_failed">書き出せませんでした</string>
-    <string name="history_empty">監視中の測定値をここに表示します。</string><string name="temp_history">温度の履歴</string><string name="scope">読み取りの範囲</string><string name="scope_body">Androidの電池情報、対象を限定したbattery sysfs、ドライバーの投票状態、実機のbatteryデバイスツリーを読み取ります。充電設定、温度保護、サービス、システムプロパティ、本体設定は変更しません。Rootでは固定した読み取りコマンドだけを実行します。Xposedモジュールは不要です。</string>
-    <string name="limitations">表示の限界</string><string name="limitations_body">ファームウェアによって取得できない項目があります。欠けた値を推測で補いません。電池電流から充電器のW数を作ったり、測定W数から45W／60Wの方式を決めたりしません。同梱する項目の説明と、実機から読み取る設定値は分けて扱います。</string>
-    <string name="licenses">オープンソースライセンス</string><string name="license_search">ライブラリを検索</string><string name="close">閉じる</string><string name="device">端末情報</string><string name="raw_fields">読み取った元の値</string><string name="empty">一致する項目がありません</string><string name="root_hint">LRP、制御の投票、充電設定を読むにはRootを許可してください。RootなしではAndroidの電池情報のみ表示します。</string>
+    <string name="overview">概要</string>
+    <string name="limits">制限</string>
+    <string name="settings">設定表</string>
+    <string name="history">履歴</string>
+    <string name="info">情報</string>
+    <string name="connect">Rootで接続</string>
+    <string name="pause">一時停止</string>
+    <string name="resume">監視を再開</string>
+    <string name="retry">Root接続を再試行</string>
+    <string name="root_connected">Root接続中</string>
+    <string name="basic_only">Androidの電池情報のみ</string>
+    <string name="paused">一時停止中・前回の測定値</string>
+    <string name="read_error">Rootで取得できませんでした。基本情報のみ表示し、保護された項目は取得不可にしています。</string>
+    <string name="battery_power">電池側の正味電力</string>
+    <string name="power_note">電池側の電圧×電流です。USB入力の実測電力ではありません。プラスは充電、マイナスは放電です。</string>
+    <string name="battery_level">電池残量</string>
+    <string name="voltage">電池電圧</string>
+    <string name="battery_current">電池電流</string>
+    <string name="battery_temp">電池温度</string>
+    <string name="lrp_temp">LRP温度</string>
+    <string name="charger_temp">充電IC温度</string>
+    <string name="usb_temp">USB温度</string>
+    <string name="direct_temp">直接充電IC温度</string>
+    <string name="wireless_temp">無線充電温度</string>
+    <string name="unavailable">取得不可</string>
+    <string name="last_sample">測定：%1$s</string>
+    <string name="charging_state">充電状態</string>
+    <string name="charging_method">認識された充電方式</string>
+    <string name="direct_state">直接充電の状態</string>
+    <string name="direct_step">直接充電の段階</string>
+    <string name="step_unused">未使用</string>
+    <string name="polling">取得間隔（充電中）</string>
+    <string name="poll_note">アプリ表示中だけ監視します。バックグラウンドでは停止し、非充電中は10秒以上の間隔に抑えます。WakeLockや常駐サービスは使いません。</string>
+    <string name="votes_title">有効な制御の投票</string>
+    <string name="votes_note">有効な投票だけを表示します。「採用」はドライバーが報告した選択結果です。電流・電圧の上限は設定値であり実測値ではありません。表示が空でも、すべてのハードウェア制限が解除されているとは限りません。</string>
+    <string name="selected">採用</string>
+    <string name="no_votes">有効な投票の報告なし</string>
+    <string name="reference_tables">温度設定の比較</string>
+    <string name="reference_note">実機から読み取った設定表です。現在の有効方式を検出したものではありません。LRPは電池温度とは別です。しきい値を超えただけでは制限中と断定しません。</string>
+    <string name="screen_off">画面OFF</string>
+    <string name="screen_on">画面ON</string>
+    <string name="lrp_line">%1$s：第1段階 %2$s／復帰 %3$s　第2段階 %4$s／復帰 %5$s　リセット %6$s</string>
+    <string name="current_limits">報告された電流上限</string>
+    <string name="input_limit">入力電流上限（ICL）</string>
+    <string name="battery_limit">電池電流上限（FCC）</string>
+    <string name="all_temperatures">温度・充電制御の現在値</string>
+    <string name="settings_search">名前・説明・値で検索</string>
+    <string name="settings_empty">Rootで接続すると、この端末の充電設定を読み取れます。別の端末で取得した値を代わりに表示することはありません。</string>
+    <string name="settings_count">%1$d項目・%2$s</string>
+    <string name="settings_note">この端末から取得した値です。設定の存在と、その分岐が有効なことは別です。空の存在フラグと数値の0を区別し、単位・条件が未確定のものは項目ごとに示します。</string>
+    <string name="present_flag">存在フラグ</string>
+    <string name="raw_bytes">元バイト列（ビッグエンディアン）</string>
+    <string name="live_values">今回の実機取得値</string>
+    <string name="cached_values">保存した実機取得値</string>
+    <string name="refresh_settings">設定表を再取得</string>
+    <string name="catalog_error">この端末の充電設定表を取得できません。</string>
+    <string name="history_note">このアプリのセッション中、最大360点をメモリに保持します。停止中の値は補間しません。残す場合は明示的に書き出してください。</string>
+    <string name="export">JSONを書き出す</string>
+    <string name="exported">書き出しました</string>
+    <string name="export_failed">書き出せませんでした</string>
+    <string name="history_empty">監視中の測定値をここに表示します。</string>
+    <string name="temp_history">温度の履歴</string>
+    <string name="scope">読み取りの範囲</string>
+    <string name="scope_body">Androidの電池情報、対象を限定したbattery sysfs、ドライバーの投票状態、実機のbatteryデバイスツリーを読み取ります。充電設定、温度保護、サービス、システムプロパティ、本体設定は変更しません。Rootでは固定した読み取りコマンドだけを実行します。Xposedモジュールは不要です。</string>
+    <string name="limitations">表示の限界</string>
+    <string name="limitations_body">ファームウェアによって取得できない項目があります。欠けた値を推測で補いません。電池電流から充電器のW数を作ったり、測定W数から45W／60Wの方式を決めたりしません。同梱する項目の説明と、実機から読み取る設定値は分けて扱います。</string>
+    <string name="licenses">オープンソースライセンス</string>
+    <string name="license_search">ライブラリを検索</string>
+    <string name="close">閉じる</string>
+    <string name="device">端末情報</string>
+    <string name="raw_fields">読み取った元の値</string>
+    <string name="empty">一致する項目がありません</string>
+    <string name="root_hint">LRP、制御の投票、充電設定を読むにはRootを許可してください。RootなしではAndroidの電池情報のみ表示します。</string>
     <string name="array_note">開始／復帰の順です。配列の条件番号は現在の有効分岐を示しません。条件の対応が未確定なものを含みます。</string>
     <string name="hysteresis_note">BZI9の参考情報：確認済みの電池温度区分の処理では、直前の区分に応じて境界を1.9℃補正します。現在適用されている境界を測定した値ではありません。</string>
+    <string name="why_now">いまの充電速度の理由</string>
+    <string name="reason_not_charging">現在は充電していません</string>
+    <string name="reason_full">満充電と報告されています</string>
+    <string name="reason_basic">原因の確認にはRootが必要です</string>
+    <string name="reason_thermal">温度関連の制御が採用されています</string>
+    <string name="reason_protection">電池保護の制御が採用されています</string>
+    <string name="reason_other">充電設定や入力側の制御が採用されています</string>
+    <string name="reason_cv">電圧を維持する充電段階です</string>
+    <string name="reason_late_step">充電後半の段階%1$dによる電流制限</string>
+    <string name="reason_step">段階充電で上限を調整しています</string>
+    <string name="reason_unknown">主な原因はまだ特定できません</string>
+    <string name="reason_not_charging_body">以前の測定値から充電中の原因を推定しません。未接続や充電停止中も含みます。</string>
+    <string name="reason_full_body">充電終了や補充電の状態です。満充電の表示だけで温度制限とは判断しません。</string>
+    <string name="reason_basic_body">Androidの基本情報だけでは制御の原因を判別できません。Root接続で根拠を確認できます。</string>
+    <string name="reason_thermal_body">温度関連の制御要求がドライバーに採用されています。段階充電など、別の制限が同時に働く場合もあります。</string>
+    <string name="reason_protection_body">ドライバーが電池保護を採用しています。この報告だけでは、その背後の温度・電圧条件をすべて区別できません。</string>
+    <string name="reason_other_body">充電設定・充電上限・USB・入力電流の調整に関する制御が採用されています。下の根拠を確認できます。</string>
+    <string name="reason_cv_body">直接充電が定電圧モードを報告しています。電圧を維持しながら電流が減る場合があります。温度制限と断定する表示ではありません。</string>
+    <string name="reason_step_body">充電の進行に合わせて、段階ごとに電流や電圧を調整する制御です。温度による制御とは区別します。</string>
+    <string name="reason_unknown_body">測定W数が低いことや温度の値だけでは、原因を特定できません。根拠のない原因は表示しません。</string>
+    <string name="reason_inferred">推定・設定値との一致</string>
+    <string name="reason_reported">根拠：ドライバーの採用報告</string>
+    <string name="reason_observed">根拠：報告された充電状態</string>
+    <string name="reason_undetermined">原因は未確定</string>
+    <string name="reason_step_match">段階%1$dの設定と、採用された電池電流上限がともに%2$sです。段階表の最大設定は%3$sです。</string>
+    <string name="reason_step_reference">段階%1$dの設定は%2$s（段階表の最大%3$s）です。採用上限と一致しないため、参考情報として表示しています。</string>
+    <string name="reason_step_correlation">採用元の報告は接続種別の設定です。段階充電が原因という判断は、実機の段階表・現在の段階・上限値の一致からの推定です。</string>
+    <string name="reason_thermal_unknown">温度関連の制御：投票データを取得できません</string>
+    <string name="reason_thermal_not_reported">温度関連の制御：有効な投票の報告なし</string>
+    <string name="reason_thermal_selected">温度関連の制御：採用された投票あり</string>
+    <string name="reason_thermal_requested">温度関連の制御：要求は有効ですが、採用報告は別の制御です</string>
+    <string name="reason_control">%1$s・%2$s %3$s・%4$s</string>
+    <string name="reason_requested">要求あり</string>
+    <string name="reason_not_exhaustive">確認できた制御の説明です。全ハードウェア制限の検出や、45W／60Wの有効方式の判定ではありません。</string>
+    <string name="control_lrp">LRP制御</string>
+    <string name="control_charger_temp">充電ICの温度制御</string>
+    <string name="control_mixed_temp">複合温度の制御</string>
+    <string name="control_protection">電池保護</string>
+    <string name="control_charge_level">充電上限・満充電の制御</string>
+    <string name="control_usage">使用状況・充電設定の制御</string>
+    <string name="control_input">入力電流の調整</string>
+    <string name="control_usb">USBの電流制限</string>
+    <string name="control_step">段階充電</string>
+    <string name="control_cable">接続種別の設定</string>
+    <string name="control_aging">電池の経年補正</string>
+    <string name="control_direct">直接充電モード</string>
+    <string name="control_unknown">その他の報告された制御</string>
 </resources>

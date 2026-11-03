@@ -318,6 +318,7 @@ class MainActivity : AppCompatActivity() {
     private fun overview() {
         if (lastError != null) note(lastError!!)
         if (!snapshot.root) note(getString(R.string.root_hint))
+        assessmentCard()
         card {
             addView(label(getString(R.string.battery_power), 14))
             addView(label(snapshot.batteryWatts()?.let { "%.2f W".format(it) } ?: "— W", 42, true))
@@ -360,6 +361,154 @@ class MainActivity : AppCompatActivity() {
             )
         }
     }
+
+    private fun assessmentCard() {
+        val assessment = ChargeAssessment.from(snapshot, catalog.properties)
+        val reason = assessment.reason
+        val inferred =
+            reason in setOf(ChargeReason.LATE_STEP, ChargeReason.STEP) &&
+                assessment.step?.matchesCurrentLimit == true &&
+                assessment.step.inferredFromCable
+        val title =
+            when (reason) {
+                ChargeReason.NOT_CHARGING -> R.string.reason_not_charging
+                ChargeReason.FULL -> R.string.reason_full
+                ChargeReason.BASIC_ONLY -> R.string.reason_basic
+                ChargeReason.THERMAL -> R.string.reason_thermal
+                ChargeReason.PROTECTION -> R.string.reason_protection
+                ChargeReason.OTHER_CONTROL -> R.string.reason_other
+                ChargeReason.CONSTANT_VOLTAGE -> R.string.reason_cv
+                ChargeReason.LATE_STEP -> R.string.reason_late_step
+                ChargeReason.STEP -> R.string.reason_step
+                ChargeReason.UNKNOWN -> R.string.reason_unknown
+            }
+        val explanation =
+            when (reason) {
+                ChargeReason.NOT_CHARGING -> R.string.reason_not_charging_body
+                ChargeReason.FULL -> R.string.reason_full_body
+                ChargeReason.BASIC_ONLY -> R.string.reason_basic_body
+                ChargeReason.THERMAL -> R.string.reason_thermal_body
+                ChargeReason.PROTECTION -> R.string.reason_protection_body
+                ChargeReason.OTHER_CONTROL -> R.string.reason_other_body
+                ChargeReason.CONSTANT_VOLTAGE -> R.string.reason_cv_body
+                ChargeReason.LATE_STEP,
+                ChargeReason.STEP -> R.string.reason_step_body
+                ChargeReason.UNKNOWN -> R.string.reason_unknown_body
+            }
+        card {
+            addView(label(getString(R.string.why_now), 14, true))
+            val step = assessment.step
+            val heading =
+                if (reason == ChargeReason.LATE_STEP && step != null) getString(title, step.index)
+                else getString(title)
+            addView(label(heading, 22, true))
+            val badge =
+                when {
+                    inferred -> R.string.reason_inferred
+                    reason in
+                        setOf(
+                            ChargeReason.THERMAL,
+                            ChargeReason.PROTECTION,
+                            ChargeReason.OTHER_CONTROL,
+                            ChargeReason.STEP,
+                        ) -> R.string.reason_reported
+                    reason == ChargeReason.UNKNOWN || reason == ChargeReason.BASIC_ONLY ->
+                        R.string.reason_undetermined
+                    else -> R.string.reason_observed
+                }
+            addView(label(getString(badge), 12, true))
+            addView(label(getString(explanation), 14))
+            if (step != null) {
+                val evidence =
+                    if (step.matchesCurrentLimit) R.string.reason_step_match
+                    else R.string.reason_step_reference
+                addView(
+                    label(
+                        getString(
+                            evidence,
+                            step.index,
+                            amps(step.currentMa),
+                            amps(step.maximumMa),
+                        ),
+                        14,
+                    )
+                )
+                if (inferred) addView(label(getString(R.string.reason_step_correlation), 12))
+            }
+            if (snapshot.root && snapshot.text("status") == "Charging") {
+                val thermal = assessment.thermalRequests
+                addView(
+                    label(
+                        getString(
+                            when {
+                                !assessment.votesAvailable -> R.string.reason_thermal_unknown
+                                thermal.isEmpty() -> R.string.reason_thermal_not_reported
+                                thermal.any { it.selected } -> R.string.reason_thermal_selected
+                                else -> R.string.reason_thermal_requested
+                            }
+                        ),
+                        13,
+                    )
+                )
+                assessment.controls
+                    .filter {
+                        it.kind != ControlKind.DIRECT_MODE &&
+                            ((it.selected && it.vote.group in setOf("ICL", "FCC")) ||
+                                it in thermal ||
+                                (it.selected && it.kind == ControlKind.BATTERY_PROTECTION))
+                    }
+                    .forEach { control ->
+                        val vote = control.vote
+                        val unit =
+                            when (vote.group) {
+                                "FCC",
+                                "ICL",
+                                "TOPOFF" -> amps(vote.value)
+                                "FV",
+                                "DCFV",
+                                "IV" -> "${vote.value} mV"
+                                else -> vote.value.toString()
+                            }
+                        addView(
+                            label(
+                                getString(
+                                    R.string.reason_control,
+                                    if (control.kind == ControlKind.UNKNOWN) vote.name
+                                    else getString(controlLabel(control.kind)),
+                                    vote.group,
+                                    unit,
+                                    getString(
+                                        if (control.selected) R.string.selected
+                                        else R.string.reason_requested
+                                    ),
+                                ),
+                                13,
+                            )
+                        )
+                    }
+                addView(label(getString(R.string.reason_not_exhaustive), 12))
+            }
+        }
+    }
+
+    private fun amps(milliamps: Long): String = "%.2f A".format(milliamps / 1000.0)
+
+    private fun controlLabel(kind: ControlKind): Int =
+        when (kind) {
+            ControlKind.LRP -> R.string.control_lrp
+            ControlKind.CHARGER_TEMPERATURE -> R.string.control_charger_temp
+            ControlKind.MIXED_TEMPERATURE -> R.string.control_mixed_temp
+            ControlKind.BATTERY_PROTECTION -> R.string.control_protection
+            ControlKind.CHARGE_LEVEL -> R.string.control_charge_level
+            ControlKind.USAGE_POLICY -> R.string.control_usage
+            ControlKind.INPUT_ADJUSTMENT -> R.string.control_input
+            ControlKind.USB_LIMIT -> R.string.control_usb
+            ControlKind.STEP -> R.string.control_step
+            ControlKind.CABLE -> R.string.control_cable
+            ControlKind.AGING -> R.string.control_aging
+            ControlKind.DIRECT_MODE -> R.string.control_direct
+            ControlKind.UNKNOWN -> R.string.control_unknown
+        }
 
     private fun limits() {
         section(R.string.votes_title)
@@ -780,12 +929,43 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun exportJson(): String {
-        fun encode(s: Snapshot) =
-            JSONObject()
+        fun encode(s: Snapshot): JSONObject {
+            val assessment = ChargeAssessment.from(s, catalog.properties)
+            val controls = JSONArray()
+            assessment.controls.forEach {
+                controls.put(
+                    JSONObject()
+                        .put("kind", it.kind.name)
+                        .put("group", it.vote.group)
+                        .put("name", it.vote.name)
+                        .put("value", it.vote.value)
+                        .put("selected", it.selected)
+                )
+            }
+            val diagnosis =
+                JSONObject()
+                    .put("reason", assessment.reason.name)
+                    .put("votesAvailable", assessment.votesAvailable)
+                    .put("controls", controls)
+            assessment.step?.let {
+                diagnosis.put(
+                    "step",
+                    JSONObject()
+                        .put("index", it.index)
+                        .put("count", it.count)
+                        .put("currentMa", it.currentMa)
+                        .put("maximumMa", it.maximumMa)
+                        .put("matchesCurrentLimit", it.matchesCurrentLimit)
+                        .put("inferredFromCable", it.inferredFromCable),
+                )
+            }
+            return JSONObject()
                 .put("time", s.time)
                 .put("root", s.root)
                 .put("fields", JSONObject(s.fields))
                 .put("batteryNetWatts", s.batteryWatts() ?: JSONObject.NULL)
+                .put("assessment", diagnosis)
+        }
         val history = JSONArray()
         samples.forEach { history.put(encode(it)) }
         val properties = JSONArray()

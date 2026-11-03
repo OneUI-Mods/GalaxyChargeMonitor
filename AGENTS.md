@@ -7,6 +7,6 @@
 
 # GitHub管理
 
-- 既存アプリと同じ非公開リポジトリで管理し、mainへのpushとPull Requestで自動検証する。
+- 既存アプリと同じOneUI-Modsの公開リポジトリで管理し、mainへのpushとPull Requestで自動検証する。
 - CIはテスト・lint・releaseビルド・依存ライセンス・APK構造を確認する。CIへ署名鍵を渡さず、自動でReleaseを作成しない。
 - 配布時は署名済みrelease APK、対応コミットのソースZIP、SHA256SUMS、署名検証結果を添付する。CIの未署名APKは配布しない。
