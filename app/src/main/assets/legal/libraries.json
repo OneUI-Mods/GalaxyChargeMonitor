@@ -1,0 +1,456 @@
+[
+  {
+    "id": "project",
+    "title": "Galaxy Charge Monitor",
+    "version": "0.1.0",
+    "license": "MIT",
+    "asset": "legal/PROJECT-MIT.txt"
+  },
+  {
+    "id": "androidx.activity:activity",
+    "title": "activity",
+    "version": "1.8.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.activity:activity:1.8.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.annotation:annotation-experimental",
+    "title": "annotation-experimental",
+    "version": "1.4.1",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.annotation:annotation-experimental:1.4.1\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.annotation:annotation-jvm",
+    "title": "annotation-jvm",
+    "version": "1.8.1",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.annotation:annotation-jvm:1.8.1\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.appcompat:appcompat-resources",
+    "title": "appcompat-resources",
+    "version": "1.7.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.appcompat:appcompat-resources:1.7.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.appcompat:appcompat",
+    "title": "appcompat",
+    "version": "1.7.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.appcompat:appcompat:1.7.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.arch.core:core-common",
+    "title": "core-common",
+    "version": "2.2.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.arch.core:core-common:2.2.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.arch.core:core-runtime",
+    "title": "core-runtime",
+    "version": "2.2.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.arch.core:core-runtime:2.2.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.cardview:cardview",
+    "title": "cardview",
+    "version": "1.0.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.cardview:cardview:1.0.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.collection:collection-jvm",
+    "title": "collection-jvm",
+    "version": "1.4.2",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.collection:collection-jvm:1.4.2\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.concurrent:concurrent-futures",
+    "title": "concurrent-futures",
+    "version": "1.1.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.concurrent:concurrent-futures:1.1.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.constraintlayout:constraintlayout-core",
+    "title": "constraintlayout-core",
+    "version": "1.1.1",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.constraintlayout:constraintlayout-core:1.1.1\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.constraintlayout:constraintlayout",
+    "title": "constraintlayout",
+    "version": "2.2.1",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.constraintlayout:constraintlayout:2.2.1\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.coordinatorlayout:coordinatorlayout",
+    "title": "coordinatorlayout",
+    "version": "1.1.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.coordinatorlayout:coordinatorlayout:1.1.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.core:core-ktx",
+    "title": "core-ktx",
+    "version": "1.16.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.core:core-ktx:1.16.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.core:core-viewtree",
+    "title": "core-viewtree",
+    "version": "1.0.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.core:core-viewtree:1.0.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.core:core",
+    "title": "core",
+    "version": "1.16.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.core:core:1.16.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.cursoradapter:cursoradapter",
+    "title": "cursoradapter",
+    "version": "1.0.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.cursoradapter:cursoradapter:1.0.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.customview:customview",
+    "title": "customview",
+    "version": "1.2.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.customview:customview:1.2.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.drawerlayout:drawerlayout",
+    "title": "drawerlayout",
+    "version": "1.1.1",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.drawerlayout:drawerlayout:1.1.1\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.dynamicanimation:dynamicanimation",
+    "title": "dynamicanimation",
+    "version": "1.1.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.dynamicanimation:dynamicanimation:1.1.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.emoji2:emoji2-views-helper",
+    "title": "emoji2-views-helper",
+    "version": "1.3.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.emoji2:emoji2-views-helper:1.3.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.emoji2:emoji2",
+    "title": "emoji2",
+    "version": "1.3.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.emoji2:emoji2:1.3.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.fragment:fragment",
+    "title": "fragment",
+    "version": "1.5.4",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.fragment:fragment:1.5.4\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.graphics:graphics-shapes-android",
+    "title": "graphics-shapes-android",
+    "version": "1.0.1",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.graphics:graphics-shapes-android:1.0.1\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.interpolator:interpolator",
+    "title": "interpolator",
+    "version": "1.0.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.interpolator:interpolator:1.0.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.lifecycle:lifecycle-common",
+    "title": "lifecycle-common",
+    "version": "2.6.2",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.lifecycle:lifecycle-common:2.6.2\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.lifecycle:lifecycle-livedata-core",
+    "title": "lifecycle-livedata-core",
+    "version": "2.6.2",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.lifecycle:lifecycle-livedata-core:2.6.2\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.lifecycle:lifecycle-livedata",
+    "title": "lifecycle-livedata",
+    "version": "2.6.2",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.lifecycle:lifecycle-livedata:2.6.2\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.lifecycle:lifecycle-process",
+    "title": "lifecycle-process",
+    "version": "2.6.2",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.lifecycle:lifecycle-process:2.6.2\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.lifecycle:lifecycle-runtime",
+    "title": "lifecycle-runtime",
+    "version": "2.6.2",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.lifecycle:lifecycle-runtime:2.6.2\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.lifecycle:lifecycle-viewmodel-savedstate",
+    "title": "lifecycle-viewmodel-savedstate",
+    "version": "2.6.2",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.2\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.lifecycle:lifecycle-viewmodel",
+    "title": "lifecycle-viewmodel",
+    "version": "2.6.2",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.lifecycle:lifecycle-viewmodel:2.6.2\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.loader:loader",
+    "title": "loader",
+    "version": "1.0.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.loader:loader:1.0.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.profileinstaller:profileinstaller",
+    "title": "profileinstaller",
+    "version": "1.4.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.profileinstaller:profileinstaller:1.4.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.recyclerview:recyclerview",
+    "title": "recyclerview",
+    "version": "1.2.1",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.recyclerview:recyclerview:1.2.1\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.resourceinspection:resourceinspection-annotation",
+    "title": "resourceinspection-annotation",
+    "version": "1.0.1",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.resourceinspection:resourceinspection-annotation:1.0.1\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.savedstate:savedstate",
+    "title": "savedstate",
+    "version": "1.2.1",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.savedstate:savedstate:1.2.1\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.startup:startup-runtime",
+    "title": "startup-runtime",
+    "version": "1.1.1",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.startup:startup-runtime:1.1.1\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.tracing:tracing",
+    "title": "tracing",
+    "version": "1.2.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.tracing:tracing:1.2.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.transition:transition",
+    "title": "transition",
+    "version": "1.5.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.transition:transition:1.5.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.vectordrawable:vectordrawable-animated",
+    "title": "vectordrawable-animated",
+    "version": "1.1.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.vectordrawable:vectordrawable-animated:1.1.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.vectordrawable:vectordrawable",
+    "title": "vectordrawable",
+    "version": "1.1.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.vectordrawable:vectordrawable:1.1.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.versionedparcelable:versionedparcelable",
+    "title": "versionedparcelable",
+    "version": "1.1.1",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.versionedparcelable:versionedparcelable:1.1.1\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.viewpager2:viewpager2",
+    "title": "viewpager2",
+    "version": "1.0.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.viewpager2:viewpager2:1.0.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "androidx.viewpager:viewpager",
+    "title": "viewpager",
+    "version": "1.0.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "androidx.viewpager:viewpager:1.0.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "com.google.android.material:material",
+    "title": "material",
+    "version": "1.14.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "com.google.android.material:material:1.14.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "com.google.errorprone:error_prone_annotations",
+    "title": "error_prone_annotations",
+    "version": "2.15.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "com.google.errorprone:error_prone_annotations:2.15.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "com.google.guava:listenablefuture",
+    "title": "listenablefuture",
+    "version": "1.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "com.google.guava:listenablefuture:1.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "org.jetbrains.kotlin:kotlin-stdlib-jdk7",
+    "title": "kotlin-stdlib-jdk7",
+    "version": "1.8.22",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.22\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "org.jetbrains.kotlin:kotlin-stdlib-jdk8",
+    "title": "kotlin-stdlib-jdk8",
+    "version": "1.8.22",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "org.jetbrains.kotlin:kotlin-stdlib",
+    "title": "kotlin-stdlib",
+    "version": "2.2.10",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "org.jetbrains.kotlin:kotlin-stdlib:2.2.10\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "org.jetbrains.kotlinx:kotlinx-coroutines-android",
+    "title": "kotlinx-coroutines-android",
+    "version": "1.6.4",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm",
+    "title": "kotlinx-coroutines-core-jvm",
+    "version": "1.6.4",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.4\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "org.jetbrains:annotations",
+    "title": "annotations",
+    "version": "13.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "org.jetbrains:annotations:13.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "org.jspecify:jspecify",
+    "title": "jspecify",
+    "version": "1.0.0",
+    "license": "Apache License 2.0",
+    "asset": "legal/APACHE-2.0.txt",
+    "notice": "org.jspecify:jspecify:1.0.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
+  },
+  {
+    "id": "notices",
+    "title": "Third-party notices",
+    "version": "",
+    "license": "Bundled notices",
+    "asset": "legal/THIRD-PARTY-NOTICES.txt"
+  }
+]
