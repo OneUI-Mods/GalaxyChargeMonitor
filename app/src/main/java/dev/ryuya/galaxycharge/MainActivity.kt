@@ -110,6 +110,7 @@ class MainActivity : AppCompatActivity() {
                 setText(R.string.connect)
                 setOnClickListener {
                     rootWanted = true
+                    if (catalog.properties.isEmpty()) requestCatalog = true
                     lastError = null
                     paused = false
                     scheduleNow()
@@ -490,6 +491,16 @@ class MainActivity : AppCompatActivity() {
         section(R.string.settings)
         note(getString(R.string.settings_note))
         catalogError?.let(::note)
+        val refresh =
+            MaterialButton(this).apply {
+                setText(R.string.refresh_settings)
+                setOnClickListener {
+                    requestCatalog = true
+                    rootWanted = true
+                    scheduleNow()
+                }
+            }
+        body.addView(refresh)
         if (catalog.properties.isEmpty()) {
             note(getString(R.string.settings_empty))
             return
@@ -502,16 +513,6 @@ class MainActivity : AppCompatActivity() {
             )
         )
         note(DateFormat.getDateTimeInstance().format(Date(catalog.captured)))
-        val refresh =
-            MaterialButton(this).apply {
-                setText(R.string.refresh_settings)
-                setOnClickListener {
-                    requestCatalog = true
-                    rootWanted = true
-                    scheduleNow()
-                }
-            }
-        body.addView(refresh)
         val box = TextInputLayout(this).apply { hint = getString(R.string.settings_search) }
         val search = TextInputEditText(box.context).apply { isSingleLine = true }
         box.addView(search)
