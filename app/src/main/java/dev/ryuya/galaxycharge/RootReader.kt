@@ -1,13 +1,13 @@
 package dev.ryuya.galaxycharge
 
-import java.util.concurrent.Executors
+import java.util.concurrent.ScheduledThreadPoolExecutor
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.atomic.AtomicReference
 
 /** A bounded, one-shot reader. There is no persistent root daemon or writable command API. */
 internal class RootReader : AutoCloseable {
     private val current = AtomicReference<Process?>()
-    private val watchdog = Executors.newSingleThreadScheduledExecutor()
+    private val watchdog = ScheduledThreadPoolExecutor(1).apply { removeOnCancelPolicy = true }
     @Volatile private var closed = false
 
     fun snapshot(): Snapshot = Frames.snapshot(execute(ReadCommands.snapshot))
