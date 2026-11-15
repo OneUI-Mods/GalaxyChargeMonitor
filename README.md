@@ -1,5 +1,7 @@
 # Galaxy Charge Monitor
 
+[日本語](README.md) · [English](README.en.md)
+
 Galaxyの充電状態と、速度を制限している制御を読み取るアプリです。充電設定や温度保護を変更する機能はありません。
 
 ## 表示するもの
