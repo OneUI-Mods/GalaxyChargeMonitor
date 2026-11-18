@@ -1,6 +1,6 @@
 # 開発者向けガイド
 
-Android SDK 37、JDK 21、Gradle wrapperを使います。Kotlinで実装しています。
+Android SDK 37、JDK 27、Gradle wrapperを使います。Kotlinで実装しています。
 
 ```sh
 ./gradlew :app:testDebugUnitTest :app:lintRelease :app:assembleRelease :app:writeRuntimeDependencyList
@@ -34,3 +34,5 @@ JVMテストはフレーム切断・Root拒否・符号・バイト順・数値0
 ## CPU・メモリ効率
 
 [変更内容と検証範囲](efficiency.md)を参照してください。
+
+[Build environment / ビルド環境](build-environment.md)

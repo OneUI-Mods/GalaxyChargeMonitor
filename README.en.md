@@ -35,3 +35,5 @@ Monitoring runs only while the app is visible and stops in the background. There
 The app has no network permission. JSON is exported only to a location you explicitly choose. The app does not write charging controls, system settings, services, or thermal protection.
 
 See the [developer guide (Japanese)](docs/DEVELOPMENT.md) for builds, validation, and signing. The app uses the [MIT License](LICENSE); dependency licenses are under **About**. This is not an official Samsung app.
+
+[Build environment / ビルド環境](docs/build-environment.md)

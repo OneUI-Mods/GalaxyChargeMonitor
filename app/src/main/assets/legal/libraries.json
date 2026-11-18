@@ -2,9 +2,16 @@
   {
     "id": "project",
     "title": "Galaxy Charge Monitor",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "license": "MIT",
     "asset": "legal/PROJECT-MIT.txt"
+  },
+  {
+    "id": "notices",
+    "title": "Third-party notices",
+    "version": "",
+    "license": "Bundled notices",
+    "asset": "legal/THIRD-PARTY-NOTICES.txt"
   },
   {
     "id": "androidx.activity:activity",
@@ -409,10 +416,10 @@
   {
     "id": "org.jetbrains.kotlin:kotlin-stdlib",
     "title": "kotlin-stdlib",
-    "version": "2.2.10",
+    "version": "2.4.21",
     "license": "Apache License 2.0",
-    "asset": "legal/APACHE-2.0.txt",
-    "notice": "org.jetbrains.kotlin:kotlin-stdlib:2.2.10\nCopyright belongs to the respective authors. See the bundled third-party notices."
+    "asset": "legal/KOTLIN-2.4.21.txt",
+    "notice": "org.jetbrains.kotlin:kotlin-stdlib:2.4.21\nCopyright belongs to the respective authors. See the bundled third-party notices."
   },
   {
     "id": "org.jetbrains.kotlinx:kotlinx-coroutines-android",
@@ -445,12 +452,5 @@
     "license": "Apache License 2.0",
     "asset": "legal/APACHE-2.0.txt",
     "notice": "org.jspecify:jspecify:1.0.0\nCopyright belongs to the respective authors. See the bundled third-party notices."
-  },
-  {
-    "id": "notices",
-    "title": "Third-party notices",
-    "version": "",
-    "license": "Bundled notices",
-    "asset": "legal/THIRD-PARTY-NOTICES.txt"
   }
 ]
