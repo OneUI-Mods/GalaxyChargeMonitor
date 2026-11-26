@@ -1,5 +1,7 @@
 # Galaxy Charge Monitor
 
+Installation requires Android 17 (API 37) or later.
+
 [日本語](README.md) · English
 
 Read charging telemetry and the controls limiting charging speed on a Galaxy. The app does not change charging settings or thermal protection.
@@ -20,7 +22,7 @@ Read charging telemetry and the controls limiting charging speed on a Galaxy. Th
 2. Open the app, select **Connect with Root**, and approve it in your root manager. Xposed / Vector registration and a reboot are not required.
 3. Detailed temperatures, controls, and setting tables become available. Android's basic telemetry is available without root.
 
-Installation requires Android 15 or later. Detailed interpretation targets Galaxy S26 Ultra (SM-S948Q), Android 17 / One UI 9 BZI9. Available readings can also be shown on Android 16 and other environments, but coverage varies by device and firmware. Missing readings are not filled with values from another device.
+Detailed interpretation targets Galaxy S26 Ultra (SM-S948Q), Android 17 / One UI 9 BZI9. Coverage varies by device and firmware. Missing readings are not filled with values from another device.
 
 ## Interpreting values
 
